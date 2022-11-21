@@ -203,3 +203,163 @@ Marital status at diagnosis:
 
 ## Referencese
 Source: https://ieee-dataport.org/open-access/seer-breast-cancer-data
+
+
+
+La resposta dels punts 1 i 2 segurament serà similar a la que heu obtingut a la Pt1
+1. Importació del Dataset
+
+---
+
+a) Explicació del context. Què son aquestes dades? Posar referències.
+b) Explicar les columnes.
+c) Quantes files hi ha?
+d) Hi ha NAs? A on?
+
+2. Arreglar el Dataset
+
+---
+
+a) El dataset està en format «tidy»? Justifiqueu la vostra resposta.
+b) Si no ho està, poseu-lo en aquest format.
+
+3. Outliers i inconsistències
+
+---
+
+a) Escolliu columnes que us interessin i investigueu-les.
+b) Outliers: Hi ha? Si hi ha, es poden esborrar? Per què?
+c) Inconsistències: Hi ha alguna inconsistència a les dades? Es pot arreglar?
+
+
+
+
+
+AGE: 
+    This data item represents the age of the patient at diagnosis for this cancer.
+    The code represents the patient’s actual age in years.
+
+--- 
+
+RACE
+
+Race recode (White, Black, Other) Field Description: 
+
+    Race recode is based on the race variables and the American Indian/Native
+    American IHS link variable. This recode should be used to link to the
+    populations for white, black and other. It is independent of Hispanic
+    ethnicity. For more information, see :
+    http://seer.cancer.gov/seerstat/variables/seer/race_ethnicity.
+
+--- 
+
+MARITAL STATUS
+
+Marital status at diagnosis:
+
+    This data item identifies the patient’s marital status at the time of diagnosis
+    for the reportable tumor.
+
+--- 
+
+T STAGE
+
+    Created from merged EOD 3rd Edition and Collaborative Stage disease
+    information. Currently only available for Breast schema. For more
+    information see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage/6th.
+
+--- 
+
+N STAGE
+
+    Created from merged EOD 3rd Edition and Collaborative Stage disease
+    information. Currently only available for Breast schema. For more information
+    see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage/6th.
+
+---
+
+6TH STAGE
+
+    Created from merged EOD 3rd Edition and Collaborative Stage disease
+    information. Currently only available for Breast schema. For more information
+    see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage/6th.
+
+--- 
+
+Grade 
+
+    Grading and differentiation codes of 1-4, 9 are defined in ICD-O-2; 1992.
+    Grade information may be incomplete for cases diagnosed before 1977. In the
+    early 1980’s, additional codes specifying T-cell, B-cell, or null cell
+    involvement in lymphomas and leukemias (histologies M9590-9940) were
+    introduced by SEER. Because the reporting requirements and medical
+    terminology have changed over time, care should be exercised when analyzing
+    this information.
+
+--- 
+
+A STAGE
+
+    Derived from Collaborative Stage (CS) for 2004+ and Extent of Disease (EOD)
+    from 1973-2003. It is a simplified version of stage: in situ, localized,
+    regional, distant, & unknown. Over time several different EOD schemes have
+    been used. Thus caution should be used when doing trend analysis. For more
+    information including sites and years for which it isn't calculated, see
+    http://seer.cancer.gov/seerstat/variables/seer/lrd-stage.
+
+--- 
+
+TUMOR SIZE
+
+    Information on tumor size. Available for 2004+. Earlier cases may be converted
+    and new codes added which weren't available for use prior to the current
+    version of CS. Each indicates exact size in millimeters. For more information,
+    see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage.
+
+--- 
+
+ESTROGEN STATUS
+
+    Created by combining information from Tumor marker 1 (1990-2003) (NAACCR Item #=1150), 
+    with information from CS site-specific factor 1 (2004+) (NAACCR Item#=2880). 
+    This field is blank for non-breast cases and cases diagnosed before 1990.
+
+--- 
+
+PROGESTERONE STATUS
+
+    Created by combining information from Tumor marker 2 (1990-2003) (NAACCR
+    Item #=1150), with information from CS site-specific factor 2 (2004+)
+    (NAACCR Item #=2880). This field is blank for non-breast cases and cases
+    diagnosed before 1990.
+
+--- 
+
+REGIONAL NODES EXAMINED
+
+    Records the total number of regional lymph nodes that were removed and
+    examined by the pathologist.
+
+--- 
+
+REGIONAL NODES POSITIVE
+
+    Records the exact number of regional lymph nodes examined by the
+    pathologist that were found to contain metastases.
+
+--- 
+
+SURVIVAL MONTHS
+
+    Created using complete dates, including days, therefore may differ from
+    survival time calculated from year and month only. For more information,
+    see http://seer.cancer.gov/survivaltime.
+
+--- 
+
+STATUS
+
+    Any patient that dies after the follow-up cut-off date is recoded to alive
+    as of the cut-off date.
+
+---
