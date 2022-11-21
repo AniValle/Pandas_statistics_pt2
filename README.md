@@ -1,5 +1,5 @@
 # SEER Breast Cancer
-==========
+========
 
     This dataset of breast cancer patients was obtained from the 2017 November
     update of the SEER Program of the NCI, which provides information on
@@ -12,7 +12,7 @@
 
 
 ## Columns
-============
+========
 
 ### AGE
 
