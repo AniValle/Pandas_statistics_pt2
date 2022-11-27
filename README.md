@@ -11,327 +11,166 @@
     whose survival months were less than 1 month were excluded; thus, 4024 patients
     were ultimately included.
 
-
-## Columns
-
 ---
 
+# NUMBER OF ROWS: 4024
+
+# COLUMNS:
+
 ### AGE
-
-Age at diagnosis Field Description: 
-
     This data item represents the age of the patient at diagnosis for this cancer.
     The code represents the patient’s actual age in years.
 
 --- 
 
 ### RACE
-
-Race recode (White, Black, Other) Field Description: 
-
-    Race recode is based on the race variables and the American Indian/Native
-    American IHS link variable. This recode should be used to link to the
-    populations for white, black and other. It is independent of Hispanic
-    ethnicity. For more information, see :
-    http://seer.cancer.gov/seerstat/variables/seer/race_ethnicity.
-
+    In this dataset the accuracy of the race is quiet questionable, because only listed the followings:
     - White
     - Black
-    - Other (American Indian/AK Native, Asian/Pacific Islander)
-    - Other unspecified (1991+)
-    - Unknown
- 
+    - Other (American Indian/AK Native, Asian...)
+
+    We will pass through this, because even genetically it is relevant, not
+    affecting the information what the data set provides us.
 
 --- 
 
 ### MARITAL STATUS
 
-Marital status at diagnosis:
+    Marital status at diagnosis:
 
     This data item identifies the patient’s marital status at the time of diagnosis
     for the reportable tumor.
-
-    - Single (never married)
-    - Married (including common law)
-    - Separated
-    - Divorced
-    - Widowed
-
 
 --- 
 
 ### T STAGE
 
-    Created from merged EOD 3rd Edition and Collaborative Stage disease
-    information. Currently only available for Breast schema. For more
-    information see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage/6th.
+    Tumour describes the size of the tumour (area of cancer). This is a simplified description of the T stage.
 
-    - T1
-    - T2
-    - T3
-    - T4
+- T1 means that the tumour is 2 centimetres (cm) across or less.
+
+- T2 means that the tumour is more than 2 centimetres but no more than 5 centimetres across.
+
+- T3 means the tumour is bigger than 5 centimetres across.
+
+- T4 is divided into 4 groups ( T4a, T4b, T4c, T4d), which can mean to where
+  the cancer has spread, and what are the typical effects of each.
 
 --- 
 
 ### N STAGE
 
-    Created from merged EOD 3rd Edition and Collaborative Stage disease
-    information. Currently only available for Breast schema. For more information
-    see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage/6th.
+    N categories for breast cancer. N followed by a number from 0 to 3
+    indicates whether the cancer has spread to lymph nodes near the breast and,
+    if so, how many lymph nodes are involved.
 
-    - N1
-    - N2
-    - N3
+- N1: Cancer has spread to 1 to 3 axillary (underarm) lymph node(s), and/or
+  cancer is found in internal mammary lymph nodes (those near the breast bone)
+  on sentinel lymph node biopsy.
+
+- N2: Cancer has spread to 4 to 9 lymph nodes under the arm, or cancer has
+  enlarged the internal mammary lymph nodes.
+
+- N3: Either cancer is found in at least one axillary lymph node (with at least
+  one area of cancer spread greater than 2 mm) and has enlarged the internal
+  mammary lymph nodes, or cancer has spread to 4 or more axillary lymph nodes
+  (with at least one area of cancer spread greater than 2 mm), and to the
+  internal mammary lymph nodes on sentinel lymph node biopsy.
 
 ---
 
 ### 6TH STAGE
 
-    Created from merged EOD 3rd Edition and Collaborative Stage disease
-    information. Currently only available for Breast schema. For more information
-    see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage/6th.
+    Doctors assign the stage of the cancer by combining the T, N, and M classifications (see above), the tumor grade, and the results of ER/PR and HER2 testing.
 
-    - IIA
-    - IIB
-    - IIIA
-    - IIIB
-    - IIIC
+##### Stage 0: 
+    Stage zero (0) describes disease that is only in the ducts of the breast tissue and has not spread to the surrounding tissue of the breast. It is also called non-invasive or in situ cancer (Tis, N0, M0).
+
+##### Stage IA: 
+    The tumor is small, invasive, and has not spread to the lymph nodes (T1, N0, M0).
+
+##### Stage IB: 
+    Cancer has spread to the lymph nodes and the cancer in the lymph node is larger than 0.2 mm but less than 2 mm in size. There is either no evidence of a tumor in the breast or the tumor in the breast is 20 mm or smaller (T0 or T1, N1mi, M0).
+
+##### Stage IIA: Any 1 of these conditions:
+
+    - There is no evidence of a tumor in the breast, but the cancer has spread to 1 to 3 axillary lymph nodes. It has not spread to distant parts of the body (T0, N1, M0). 
+    
+    - The tumor is 20 mm or smaller and has spread to 1 to 3 axillary lymph nodes (T1, N1, M0).
+    
+    - The tumor is larger than 20 mm but not larger than 50 mm and has not spread to the axillary lymph nodes (T2, N0, M0).
+
+##### Stage IIB: 
+
+Either of these conditions:
+
+    - The tumor is larger than 20 mm but not larger than 50 mm and has spread to 1 to 3 axillary lymph nodes (T2, N1, M0).
+
+    - The tumor is larger than 50 mm but has not spread to the axillary lymph nodes (T3, N0, M0).
+
+##### Stage IIIA: 
+    - The tumor of any size has spread to 4 to 9 axillary lymph nodes or to internal mammary lymph nodes. It has not spread to other parts of the body (T0, T1, T2, or T3; N2; M0). Stage IIIA may also be a tumor larger than 50 mm that has spread to 1 to 3 axillary lymph nodes (T3, N1, M0).
+
+##### Stage IIIB: 
+    - The tumor has spread to the chest wall or caused swelling or ulceration of the breast, or it is diagnosed as inflammatory breast cancer. It may or may not have spread to up to 9 axillary or internal mammary lymph nodes. It has not spread to other parts of the body (T4; N0, N1, or N2; M0).
+
+##### Stage IIIC: 
+    - A tumor of any size that has spread to 10 or more axillary lymph nodes, the internal mammary lymph nodes, and/or the lymph nodes under the collarbone. It has not spread to other parts of the body (any T, N3, M0).
+
+##### Stage IV (metastatic): 
+    - The tumor can be any size and has spread to other organs, such as the bones, lungs, brain, liver, distant lymph nodes, or chest wall (any T, any N, M1). Metastatic cancer found when the cancer is first diagnosed occurs about 6% of the time. This may be called de novo metastatic breast cancer. Most commonly, metastatic breast cancer is found after a previous diagnosis of early stage breast cancer. Learn more about metastatic breast cancer.
 
 --- 
 
 ### Grade 
 
-    Grading and differentiation codes of 1-4, 9 are defined in ICD-O-2; 1992.
-    Grade information may be incomplete for cases diagnosed before 1977. In the
-    early 1980’s, additional codes specifying T-cell, B-cell, or null cell
-    involvement in lymphomas and leukemias (histologies M9590-9940) were
-    introduced by SEER. Because the reporting requirements and medical
-    terminology have changed over time, care should be exercised when analyzing
-    this information.
+    In general, a lower grade indicates a slower-growing cancer and a higher grade indicates a faster-growing one. The grading system that's usually used is as follows:
 
-    - Grade I; grade i; grade 1; well differentiated; differentiated, NOS
-    - Grade II; grade ii; grade 2; moderately differentiated; moderately differentiated; intermediate differentiation
-    - Grade III; grade iii; grade 3; poorly differentiated; differentiated
-    - Grade IV; grade iv; grade 4; undifferentiated; anaplastic
+##### Grade I: 
+    - Cancer cells that resemble normal cells and aren't growing rapidly.
 
---- 
+##### Grade II: 
+    - Cancer cells that don't look like normal cells and are growing faster than normal cells.
 
-### A STAGE
-
-    Derived from Collaborative Stage (CS) for 2004+ and Extent of Disease (EOD)
-    from 1973-2003. It is a simplified version of stage: in situ, localized,
-    regional, distant, & unknown. Over time several different EOD schemes have
-    been used. Thus caution should be used when doing trend analysis. For more
-    information including sites and years for which it isn't calculated, see
-    http://seer.cancer.gov/seerstat/variables/seer/lrd-stage.
-
-    - Regional — A neoplasm that has extended 1) beyond the limits of the organ
-      of origin directly into surrounding organs or tissues; 2) into regional
-      lymph nodes by way of the lymphatic system; or 3) by a combination of
-      extension and regional lymph nodes.
-
-    - Distant — A neoplasm that has spread to parts of the body remote from the
-      primary tumor either by direct extension or by discontinuous metastasis
-      (e.g., implantation or seeding) to distant organs, issues, or via the
-      lymphatic system to distant lymph nodes.
-
---- 
-
-### TUMOR SIZE
-
-    Information on tumor size. Available for 2004+. Earlier cases may be converted
-    and new codes added which weren't available for use prior to the current
-    version of CS. Each indicates exact size in millimeters. For more information,
-    see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage.
-
---- 
-
-### ESTROGEN STATUS
-
-    Created by combining information from Tumor marker 1 (1990-2003) (NAACCR Item #=1150), 
-    with information from CS site-specific factor 1 (2004+) (NAACCR Item#=2880). 
-    This field is blank for non-breast cases and cases diagnosed before 1990.
-
-    - Positive
-    - Negative
-
---- 
-
-### PROGESTERONE STATUS
-
-    Created by combining information from Tumor marker 2 (1990-2003) (NAACCR
-    Item #=1150), with information from CS site-specific factor 2 (2004+)
-    (NAACCR Item #=2880). This field is blank for non-breast cases and cases
-    diagnosed before 1990.
-
-    - Positive
-    - Negative
-
---- 
-
-### REGIONAL NODES EXAMINED
-
-    Records the total number of regional lymph nodes that were removed and
-    examined by the pathologist.
-
---- 
-
-### REGIONAL NODES POSITIVE
-
-    Records the exact number of regional lymph nodes examined by the
-    pathologist that were found to contain metastases.
-
---- 
-
-### SURVIVAL MONTHS
-
-    Created using complete dates, including days, therefore may differ from
-    survival time calculated from year and month only. For more information,
-    see http://seer.cancer.gov/survivaltime.
-
---- 
-
-### STATUS
-
-    Any patient that dies after the follow-up cut-off date is recoded to alive
-    as of the cut-off date.
-
-    - Alive
-    - Dead
-
----
-
-## Referencese
-Source: https://ieee-dataport.org/open-access/seer-breast-cancer-data
-
-
-
-La resposta dels punts 1 i 2 segurament serà similar a la que heu obtingut a la Pt1
-1. Importació del Dataset
-
----
-
-a) Explicació del context. Què son aquestes dades? Posar referències.
-b) Explicar les columnes.
-c) Quantes files hi ha?
-d) Hi ha NAs? A on?
-
-2. Arreglar el Dataset
-
----
-
-a) El dataset està en format «tidy»? Justifiqueu la vostra resposta.
-b) Si no ho està, poseu-lo en aquest format.
-
-3. Outliers i inconsistències
-
----
-
-a) Escolliu columnes que us interessin i investigueu-les.
-b) Outliers: Hi ha? Si hi ha, es poden esborrar? Per què?
-c) Inconsistències: Hi ha alguna inconsistència a les dades? Es pot arreglar?
-
-
-
-
-
-AGE: 
-    This data item represents the age of the patient at diagnosis for this cancer.
-    The code represents the patient’s actual age in years.
-
---- 
-
-RACE
-
-Race recode (White, Black, Other) Field Description: 
-
-    Race recode is based on the race variables and the American Indian/Native
-    American IHS link variable. This recode should be used to link to the
-    populations for white, black and other. It is independent of Hispanic
-    ethnicity. For more information, see :
-    http://seer.cancer.gov/seerstat/variables/seer/race_ethnicity.
-
---- 
-
-MARITAL STATUS
-
-Marital status at diagnosis:
-
-    This data item identifies the patient’s marital status at the time of diagnosis
-    for the reportable tumor.
-
---- 
-
-T STAGE
-
-    Created from merged EOD 3rd Edition and Collaborative Stage disease
-    information. Currently only available for Breast schema. For more
-    information see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage/6th.
-
---- 
-
-N STAGE
-
-    Created from merged EOD 3rd Edition and Collaborative Stage disease
-    information. Currently only available for Breast schema. For more information
-    see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage/6th.
-
----
-
-6TH STAGE
-
-    Created from merged EOD 3rd Edition and Collaborative Stage disease
-    information. Currently only available for Breast schema. For more information
-    see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage/6th.
-
---- 
-
-Grade 
-
-    Grading and differentiation codes of 1-4, 9 are defined in ICD-O-2; 1992.
-    Grade information may be incomplete for cases diagnosed before 1977. In the
-    early 1980’s, additional codes specifying T-cell, B-cell, or null cell
-    involvement in lymphomas and leukemias (histologies M9590-9940) were
-    introduced by SEER. Because the reporting requirements and medical
-    terminology have changed over time, care should be exercised when analyzing
-    this information.
+##### Grade III:
+    - Cancer cells that look abnormal and may grow or spread more aggressively.
 
 --- 
 
 A STAGE
 
-    Derived from Collaborative Stage (CS) for 2004+ and Extent of Disease (EOD)
-    from 1973-2003. It is a simplified version of stage: in situ, localized,
-    regional, distant, & unknown. Over time several different EOD schemes have
-    been used. Thus caution should be used when doing trend analysis. For more
-    information including sites and years for which it isn't calculated, see
-    http://seer.cancer.gov/seerstat/variables/seer/lrd-stage.
+    The positioning and spreading direction of the cancer.
+
+Regional:
+    - Cancer has spread to nearby lymph nodes, tissues, or organs.
+
+Distant:
+    - A distant (metastatic) recurrence means the cancer has traveled to
+      distant parts of the body, most commonly the bones, liver and lungs.
 
 --- 
 
 TUMOR SIZE
 
-    Information on tumor size. Available for 2004+. Earlier cases may be converted
-    and new codes added which weren't available for use prior to the current
-    version of CS. Each indicates exact size in millimeters. For more information,
-    see http://seer.cancer.gov/seerstat/variables/seer/ajcc-stage.
+    Information on tumor size. Each indicates exact size in millimeters.
 
 --- 
 
 ESTROGEN STATUS
 
-    Created by combining information from Tumor marker 1 (1990-2003) (NAACCR Item #=1150), 
-    with information from CS site-specific factor 1 (2004+) (NAACCR Item#=2880). 
-    This field is blank for non-breast cases and cases diagnosed before 1990.
+    Describes cells that have a protein that binds to the hormone estrogen.
+    Cancer cells that are estrogen receptor positive may need estrogen to grow.
+    These cells may stop growing or die when treated with substances that block
+    the binding and actions of estrogen.
 
 --- 
 
 PROGESTERONE STATUS
 
-    Created by combining information from Tumor marker 2 (1990-2003) (NAACCR
-    Item #=1150), with information from CS site-specific factor 2 (2004+)
-    (NAACCR Item #=2880). This field is blank for non-breast cases and cases
-    diagnosed before 1990.
+    If the value is positive, then this type of breast cancer is sensitive to
+    progesterone, and the cells have receptors that allow them to use this
+    hormone to grow. Treatment with endocrine therapy blocks the growth of the
+    cancer cells.
 
 --- 
 
@@ -351,9 +190,8 @@ REGIONAL NODES POSITIVE
 
 SURVIVAL MONTHS
 
-    Created using complete dates, including days, therefore may differ from
-    survival time calculated from year and month only. For more information,
-    see http://seer.cancer.gov/survivaltime.
+    The number of months the patient has endured until recovery or death.
+    The counter of the months has been started in each patient from the moment of diagnosis positive.
 
 --- 
 
